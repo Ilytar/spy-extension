@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Metrology",
+  "version": "2.0.0",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "64": "icon64.png",
+    "128": "icon128.png"
+  },
+
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Metrology"
+  },
+
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://fgis.gost.ru/fundmetrology/cm/lk/calibrations/*"],
+      "js": ["contentFundMetrologyPersonal.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://fgis.gost.ru/fundmetrology/cm/*"],
+      "js": ["contentFundMetrology.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://support.fsa.gov.ru/*"],
+      "js": ["contentRosaccreditation.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "http://10.7.9.178/#_48_INSTANCE_IkGXCsq10OVA_%25253Dhttp%2525253A%2525252F%2525252F10.7.9.178%2525252FASOMI%2525252FLoginCAS.aspx%2525253Fticket%2525253DST-2032-9J3UndgFGGxbJFO5QZnV-cas%253D%2526_48_INSTANCE_IkGXCsq10OVA_%253Dhttp%25253A%25252F%25252F10.7.9.178%25252FASOMI%25252FDefault.aspx%3D%26_48_INSTANCE_IkGXCsq10OVA_%3Dhttp%253A%252F%252F10.7.9.178%252FASOMI%252FWorkflow%252FWorktree.aspx"
+      ],
+      "js": ["contentARMmetrolog.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "storage",
+    "contextMenus",
+    "webRequest"
+  ],
+  "host_permissions": ["http://*/*", "https://*/*"]
+}

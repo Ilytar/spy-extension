@@ -1,0 +1,48 @@
+{
+  "name": "metrology-extension",
+  "private": true,
+  "version": "1",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsx build.ts",
+    "watch": "node command.watch.js",
+    "manifest": "node command.manifest.js",
+    "clear": "rimraf ./dist",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.18",
+    "@mui/material": "^5.15.18",
+    "@mui/x-date-pickers": "^6.19.0",
+    "material-react-table": "^2.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-toastify": "^10.0.5",
+    "styled-components": "^6.1.8",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.21",
+    "@eslint/js": "^9.8.0",
+    "@types/chrome": "^0.0.248",
+    "@types/node": "^20.8.10",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint": "9.x",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "globals": "^15.9.0",
+    "ncp": "^2.0.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.1",
+    "typescript": "^5.0.2",
+    "typescript-eslint": "^8.0.0",
+    "vite": "^4.4.5"
+  }
+}
