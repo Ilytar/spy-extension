@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "npx tsx build.ts",
-    "watch": "node command.watch.js",
-    "manifest": "node command.manifest.js",
+    "watch": "npx tsx command.watch.ts",
+    "manifest": "npx tsx command.manifest.ts",
     "clear": "rimraf ./dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },

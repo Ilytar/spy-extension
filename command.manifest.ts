@@ -1,8 +1,8 @@
 import ncp from "ncp";
 import { promisify } from "util";
-import { BUILD_FOLDER, PUBLIC_FOLDER } from "./files.js";
+import { BUILD_FOLDER, PUBLIC_FOLDER } from "./files";
 
-const copyAsync = promisify(ncp);
+const copyAsync = promisify(ncp) as (from: string, to: string) => Promise<void>;
 
 async function copyPublicFolder() {
   try {
